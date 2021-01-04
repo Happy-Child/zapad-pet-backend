@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 const IndexPage = ({ json: { test } }: { json: { test: string } }) => {
   return (
     <Layout title="Home | Next.js + TypeScript Example">
-      <h1>Hello Next.js 👋</h1>
+      <h1>Hello Next.js</h1>
       <strong>{test}</strong>
       <p>
         <Link href="/about">
