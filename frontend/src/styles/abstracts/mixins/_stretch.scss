@@ -1,0 +1,7 @@
+@mixin responsive-height($height) {
+  &:before {
+    content: "";
+    display: block;
+    padding-top: $height;
+  }
+}

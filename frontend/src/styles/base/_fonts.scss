@@ -1,0 +1,5 @@
+@import "../abstracts/mixins/font-face";
+
+@include font-face("ProximaNova-Regular", "/fonts/ProximaNova-Regular")
+@include font-face("ProximaNova-Medium", "/fonts/ProximaNova-Medium")
+@include font-face("ProximaNova-Bold", "/fonts/ProximaNova-Bold")

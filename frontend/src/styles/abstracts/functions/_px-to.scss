@@ -1,0 +1,7 @@
+@function px-to-rem($size, $default-size: $font-size) {
+  @return $size / $default-size * 1rem;
+}
+
+@function px-to-em($size, $default-size: $font-size) {
+  @return $size / $default-size * 1em;
+}

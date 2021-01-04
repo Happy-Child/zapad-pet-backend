@@ -1,0 +1,21 @@
+html {
+  font-size: $font-size;
+}
+
+body {
+  font-size: inherit;
+  font-family: $default-font;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  color: $default-color-text;
+}
+
+.el-disabled {
+  pointer-events: none;
+}
+
+b,
+strong {
+  font-weight: 700;
+}

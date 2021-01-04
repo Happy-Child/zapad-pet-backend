@@ -1,0 +1,53 @@
+// Colors
+$color-main: #00A49D;
+$color-main-second: #00706B;
+$color-main-dark: #191B1D;
+$color-main-dark-second: #09333D;
+$color-main-dim: #D6FFFD;
+$color-main-light: #0AFFF5;
+
+$color-accent: #FF5B30;
+$color-accent-dark: #FF8F63;
+$color-accent-dim: #FFAE82;
+$color-accent-light: #FFCFAC;
+
+$color-dark: #191B1D;
+$color-gray-dark: #434B50;
+$color-gray: #A1ACB7;
+$color-gray-light: #D9DEE2;
+$color-light: #F1F5F9;
+
+$color-orange: #F79009;
+$color-red: #EA6556;
+$color-red-dark: #B72018;
+$color-blue: #008CDD;
+$color-pink: #F7517F;
+$color-green-dark: #80A80A;
+
+// Transitions
+$transition-default: 0.2s ease;
+
+// Font families
+$font-regular: "ProximaNova-Regular", serif;
+$font-medium: "ProximaNova-Medium", serif;
+$font-bold: "ProximaNova-Bold", serif;
+
+// Typography
+$default-font: $font-regular;
+$font-size: 16px;
+$font-weight: 400;
+$line-height: 1.4;
+$letter-spacing: 0;
+$default-color-text: $color-dark;
+
+  // Grid
+$gutter: 15px;
+
+  // Breakpoints
+$breakpoints: (
+  'xl': 1290px,
+  'lg': 992px,
+  'md': 768px,
+  'sm': 576px,
+  'xs': 375px,
+);

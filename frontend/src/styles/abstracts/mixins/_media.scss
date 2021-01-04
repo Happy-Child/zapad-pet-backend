@@ -1,0 +1,11 @@
+@mixin media-max($type: xl) {
+  @media (max-width: map-get($breakpoints, $type) - 1px) {
+    @content;
+  }
+}
+
+@mixin media-min($type: xl) {
+  @media (min-width: map-get($breakpoints, $type) - 1px) {
+    @content;
+  }
+}
