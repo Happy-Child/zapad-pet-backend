@@ -10,6 +10,25 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
-    "incremental": true
+    "incremental": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@libs/auth": [
+        "libs/auth/src",
+      ],
+      "@libs/exceptions": [
+        "libs/exceptions/src",
+      ],
+      "@libs/constants": [
+        "libs/constants/src",
+      ],
+      "@libs/entities": [
+        "libs/entities/src",
+      ],
+      "@libs/dtos": [
+        "libs/dtos/src",
+      ]
+    }
   }
 }
