@@ -35,3 +35,7 @@ lerna-debug.log*
 
 # ide
 .idea
+
+local.json
+production.json
+.env

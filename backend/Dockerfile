@@ -19,6 +19,4 @@ COPY --from=build /build/dist ./dist
 RUN yarn global add @nestjs/cli@7.5.4
 RUN yarn add nest
 
-EXPOSE 8000
-
 CMD yarn start:prod

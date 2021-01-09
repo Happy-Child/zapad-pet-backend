@@ -21,7 +21,7 @@
     "test:e2e": "jest --config test/jest-e2e.json",
     "remove_images": "docker rmi -f zapad-pet-backend registry.heroku.com/zapad-pet-backend/web",
     "build_image": "docker build . -t zapad-pet-backend",
-    "h_push": "heroku container:push web --app zapad-pet-backend",
+    "h_push": "heroku container:login && heroku container:push web --app zapad-pet-backend",
     "h_release": "heroku container:release web --app zapad-pet-backend",
     "h_build": "yarn remove_images && yarn build_image && yarn h_push && yarn h_release",
     "h_logs": "heroku logs --tail --app zapad-pet-backend"
