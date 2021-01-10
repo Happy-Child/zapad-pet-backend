@@ -1,9 +1,16 @@
 {
+  "NODE_ENV": "dev",
   "DB": {
-    "POSTGRES_HOST": "postgres",
+    "POSTGRES_HOST": "localhost",
     "POSTGRES_PORT": 5432,
     "POSTGRES_DB": "zapad",
     "POSTGRES_USER": "postgres",
     "POSTGRES_PASSWORD": "postgres"
+  },
+  "MAIL_SENDER": {
+    "HOST": "smtp.gmail.com",
+    "PORT": 465,
+    "USER": "USER",
+    "PASSWORD": "PASSWORD"
   }
 }

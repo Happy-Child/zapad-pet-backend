@@ -1,11 +1,13 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 import * as config from 'config';
+import { User } from '@libs/entities';
 
-const entities = [];
+const entities = [User];
 
-const synchronize = process.env.NODE_ENV === 'dev';
+const synchronize = config.NODE_ENV === 'dev';
 
 @Module({
   imports: [
@@ -23,6 +25,7 @@ const synchronize = process.env.NODE_ENV === 'dev';
       synchronize,
     }),
     UserModule,
+    AuthModule,
   ],
 })
 export class AppModule {}
