@@ -46,6 +46,12 @@
       ],
       "@libs/filters/*": [
         "libs/filters/src/*"
+      ],
+      "@libs/static-text": [
+        "libs/static-text/src"
+      ],
+      "@libs/static-text/*": [
+        "libs/static-text/src/*"
       ]
     }
   }

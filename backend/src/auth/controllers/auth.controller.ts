@@ -2,10 +2,8 @@ import {
   Controller,
   Get,
   Post,
-  Param,
   Body,
   Query,
-  ParseIntPipe,
 } from '@nestjs/common';
 import { AuthService } from '../services/auth.service';
 import { LoginBodyDto } from '../dtos/login.body.dto';

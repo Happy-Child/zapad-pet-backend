@@ -34,7 +34,7 @@ export class ValidationPipe implements PipeTransform {
   }
 
   private prepareErrors(errors: ValidationError[]) {
-    return errors.map(({ property, constraints, children }) => {
+    return errors.map(({ property, constraints }) => {
       const errors = Object.keys(constraints).map((errorType) => ({
         errorType,
         errorCode: constraints[errorType],
@@ -44,10 +44,6 @@ export class ValidationPipe implements PipeTransform {
         field: property,
         errors,
       };
-
-      if (children.length) {
-        resultError.childrenErrors = this.prepareErrors(children);
-      }
 
       return resultError;
     });

@@ -12,6 +12,8 @@
   },
   "moduleNameMapper": {
     "@libs/filters/(.*)": "<rootDir>/../libs/filters/src/$1",
-    "@libs/filters": "<rootDir>/../libs/filters/src"
+    "@libs/filters": "<rootDir>/../libs/filters/src",
+    "@libs/static-text/(.*)": "<rootDir>/../libs/static-text/src/$1",
+    "@libs/static-text": "<rootDir>/../libs/static-text/src"
   }
 }

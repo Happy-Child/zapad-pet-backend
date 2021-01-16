@@ -1,2 +1,2 @@
-export * from './constants/user.constants';
+export * from './constants';
 export * as ERRORS from './errors/index';

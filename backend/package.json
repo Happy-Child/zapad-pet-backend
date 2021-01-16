@@ -29,6 +29,8 @@
   "dependencies": {
     "@nestjs/common": "^7.5.1",
     "@nestjs/core": "^7.5.1",
+    "@nestjs/jwt": "^7.2.0",
+    "@nestjs/passport": "^7.1.5",
     "@nestjs/platform-express": "^7.5.1",
     "@nestjs/typeorm": "^7.1.5",
     "@types/bcrypt": "^3.0.0",
@@ -39,6 +41,8 @@
     "config": "^3.3.3",
     "libphonenumber-js": "^1.9.7",
     "nodemailer": "^6.4.17",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
     "pg": "^8.5.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
@@ -91,7 +95,9 @@
       "@libs/pipes/(.*)": "<rootDir>/libs/pipes/src/$1",
       "@libs/pipes": "<rootDir>/libs/pipes/src",
       "@libs/filters/(.*)": "<rootDir>/libs/filters/src/$1",
-      "@libs/filters": "<rootDir>/libs/filters/src"
+      "@libs/filters": "<rootDir>/libs/filters/src",
+      "@libs/static-text/(.*)": "<rootDir>/libs/static-text/src/$1",
+      "@libs/static-text": "<rootDir>/libs/static-text/src"
     }
   }
 }
