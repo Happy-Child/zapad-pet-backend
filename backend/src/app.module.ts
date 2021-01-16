@@ -1,8 +1,10 @@
+import * as config from 'config';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
-import * as config from 'config';
+import { GlobalFiltersModule } from '@libs/filters/global-filters.module';
+import { GlobalPipesModule } from '@libs/pipes/global-pipes.module';
 import { User } from '@libs/entities';
 
 const entities = [User];
@@ -24,6 +26,8 @@ const synchronize = config.NODE_ENV === 'dev';
       entities,
       synchronize,
     }),
+    GlobalPipesModule,
+    GlobalFiltersModule,
     UserModule,
     AuthModule,
   ],

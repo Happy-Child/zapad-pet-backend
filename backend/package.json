@@ -8,7 +8,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
-    "format": "prettier --write \\\"src/**/*.ts\\\" \\\"test/**/*.ts\\\"",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
@@ -21,10 +21,10 @@
     "test:e2e": "jest --config test/jest-e2e.json",
     "remove_images": "docker rmi -f zapad-pet-backend registry.heroku.com/zapad-pet-backend/web",
     "build_image": "docker build . -t zapad-pet-backend",
-    "h_push": "heroku container:login && heroku container:push web --app zapad-pet-backend",
-    "h_release": "heroku container:release web --app zapad-pet-backend",
-    "h_build": "yarn remove_images && yarn build_image && yarn h_push && yarn h_release",
-    "h_logs": "heroku logs --tail --app zapad-pet-backend"
+    "h:push": "heroku container:login && heroku container:push web --app zapad-pet-backend",
+    "h:release": "heroku container:release web --app zapad-pet-backend",
+    "h:build": "yarn remove_images && yarn build_image && yarn h:push && yarn h:release",
+    "h:logs": "heroku logs --tail --app zapad-pet-backend"
   },
   "dependencies": {
     "@nestjs/common": "^7.5.1",
@@ -73,7 +73,7 @@
       "json",
       "ts"
     ],
-    "rootDir": "src",
+    "rootDir": ".",
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
@@ -81,7 +81,17 @@
     "collectCoverageFrom": [
       "**/*.(t|j)s"
     ],
-    "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "coverageDirectory": "./coverage",
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/src/",
+      "<rootDir>/libs/"
+    ],
+    "moduleNameMapper": {
+      "@libs/pipes/(.*)": "<rootDir>/libs/pipes/src/$1",
+      "@libs/pipes": "<rootDir>/libs/pipes/src",
+      "@libs/filters/(.*)": "<rootDir>/libs/filters/src/$1",
+      "@libs/filters": "<rootDir>/libs/filters/src"
+    }
   }
 }

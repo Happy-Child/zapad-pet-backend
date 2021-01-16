@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Query } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Param,
+  Body,
+  Query,
+  ParseIntPipe,
+} from '@nestjs/common';
 import { AuthService } from '../services/auth.service';
 import { LoginBodyDto } from '../dtos/login.body.dto';
 import { ResetPasswordQueryDto } from '../dtos/reset-password.query.dto';
@@ -10,17 +18,19 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('/login')
-  async login(@Body() body: LoginBodyDto): Promise<LoginResponseDto> {
-    return this.authService.login(body);
+  async login(@Body() LoginBodyDto: LoginBodyDto): Promise<LoginResponseDto> {
+    return this.authService.login(LoginBodyDto);
   }
 
   @Post('/registration')
-  async registration(@Body() body: RegistrationBodyDto): Promise<boolean> {
-    return this.authService.registration(body);
+  async registration(
+    @Body() RegistrationBodyDto: RegistrationBodyDto,
+  ): Promise<boolean> {
+    return this.authService.registration(RegistrationBodyDto);
   }
 
   @Get('/reset_password')
-  async resetPassword(@Query() query: ResetPasswordQueryDto) {
-    return this.authService.resetPassword(query);
+  async resetPassword(@Query() ResetPasswordQueryDto: ResetPasswordQueryDto) {
+    return this.authService.resetPassword(ResetPasswordQueryDto);
   }
 }

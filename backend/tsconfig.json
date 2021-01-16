@@ -15,25 +15,37 @@
     "esModuleInterop": true,
     "paths": {
       "@libs/auth": [
-        "libs/auth/src",
+        "libs/auth/src"
       ],
       "@libs/exceptions": [
-        "libs/exceptions/src",
+        "libs/exceptions/src"
       ],
       "@libs/constants": [
-        "libs/constants/src",
+        "libs/constants/src"
       ],
       "@libs/entities": [
-        "libs/entities/src",
+        "libs/entities/src"
       ],
       "@libs/dtos": [
-        "libs/dtos/src",
+        "libs/dtos/src"
       ],
       "@libs/helpers": [
-        "libs/helpers/src",
+        "libs/helpers/src"
       ],
       "@libs/mail-sender": [
-        "libs/mail-sender/src",
+        "libs/mail-sender/src"
+      ],
+      "@libs/pipes": [
+        "libs/pipes/src"
+      ],
+      "@libs/pipes/*": [
+        "libs/pipes/src/*"
+      ],
+      "@libs/filters": [
+        "libs/filters/src"
+      ],
+      "@libs/filters/*": [
+        "libs/filters/src/*"
       ]
     }
   }

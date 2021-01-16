@@ -8,7 +8,6 @@ import {
   MaxLength,
   MinLength,
 } from 'class-validator';
-import { Column } from 'typeorm';
 import {
   ERRORS,
   MAX_NAME_LENGTH,
