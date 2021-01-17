@@ -188,6 +188,10 @@ export class AuthService {
     return true;
   }
 
+  public async me(email): Promise<User> {
+    return await this.userRepository.findBy(email);
+  }
+
   private getPayloadTokenOrFail(token: string): TJwtPayload {
     try {
       const { userId, userEmail } = this.jwtService.verify<TJwtPayload>(token);

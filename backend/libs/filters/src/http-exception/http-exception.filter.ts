@@ -10,30 +10,22 @@ import { IAbstractError } from '@libs/exceptions';
 @Catch()
 export class HttpExceptionFilter implements ExceptionFilter {
   catch(exception: unknown, host: ArgumentsHost): void {
+    console.log('HttpExceptionFilter', exception);
     const isHttp = host.getType() === 'http';
     if (isHttp) {
       const ctx = host.switchToHttp();
       const res: Response = ctx.getResponse();
 
       if (exception instanceof HttpException) {
-        const req: Request = ctx.getRequest();
         const status = exception.getStatus();
         const message = exception.message;
-        const defaultErrors = [
-          {
-            field: '',
-            message,
-            errors: req as { [key: string]: any },
-          },
-        ];
 
         if (status >= 400 && status <= 500) {
           const isAbstractError = this.checkInstanceAbstractError(exception);
           const errors = isAbstractError
             ? ((exception as unknown) as IAbstractError).errors
-            : defaultErrors;
+            : [];
           res.status(status).json({ status, message, errors });
-          return;
         }
       }
 

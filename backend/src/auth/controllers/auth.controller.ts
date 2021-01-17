@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Query } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Query,
+  Req,
+  UseGuards,
+} from '@nestjs/common';
 import { AuthService } from '../services/auth.service';
 import { LoginBodyDto, LoginResponseDto } from '../dtos/login.dto';
 import {
@@ -10,6 +18,8 @@ import {
   ConfirmEmailQueryDto,
   FinishConfirmEmailBodyDto,
 } from '../dtos/confirm-email.dto';
+import { JwtAuthGuard } from '../guards/jwt.guard';
+import { User } from '@libs/entities';
 
 @Controller('auth')
 export class AuthController {
@@ -53,6 +63,12 @@ export class AuthController {
     @Body() FinishResetPasswordBodyDto: FinishResetPasswordBodyDto,
   ) {
     return this.authService.finishResetPassword(FinishResetPasswordBodyDto);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Get('/me')
+  async me(@Req() { user }): Promise<User> {
+    return this.authService.me(user.userEmail);
   }
 
   @Get('/ra')
