@@ -12,5 +12,6 @@
     "PORT": 465,
     "USER": "USER",
     "PASSWORD": "PASSWORD"
-  }
+  },
+  "FRONT_URL": "http://localhost:3000"
 }

@@ -33,7 +33,9 @@ export class ValidationPipe implements PipeTransform {
     return !types.includes(metatype);
   }
 
-  private prepareErrors(errors: ValidationError[]) {
+  private prepareErrors(
+    errors: ValidationError[],
+  ): TExceptionValidationError[] {
     return errors.map(({ property, constraints }) => {
       const errors = Object.keys(constraints).map((errorType) => ({
         errorType,

@@ -52,6 +52,18 @@
       ],
       "@libs/static-text/*": [
         "libs/static-text/src/*"
+      ],
+      "@libs/pug-engine": [
+        "libs/pug-engine/src"
+      ],
+      "@libs/pug-engine/*": [
+        "libs/pug-engine/src/*"
+      ],
+      "@libs/pug-templates": [
+        "libs/pug-templates/src"
+      ],
+      "@libs/pug-templates/*": [
+        "libs/pug-templates/src/*"
       ]
     }
   }

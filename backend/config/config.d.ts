@@ -15,4 +15,6 @@ declare module 'config' {
     USER: string;
     PASSWORD: string;
   };
+
+  export const FRONT_URL: string;
 }

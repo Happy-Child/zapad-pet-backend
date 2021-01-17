@@ -35,6 +35,7 @@
     "@nestjs/typeorm": "^7.1.5",
     "@types/bcrypt": "^3.0.0",
     "@types/nodemailer": "^6.4.0",
+    "@types/pug": "^2.0.4",
     "bcrypt": "^5.0.0",
     "class-transformer": "^0.3.1",
     "class-validator": "^0.12.2",
@@ -44,6 +45,7 @@
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "pg": "^8.5.1",
+    "pug": "^3.0.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.3",
@@ -97,7 +99,11 @@
       "@libs/filters/(.*)": "<rootDir>/libs/filters/src/$1",
       "@libs/filters": "<rootDir>/libs/filters/src",
       "@libs/static-text/(.*)": "<rootDir>/libs/static-text/src/$1",
-      "@libs/static-text": "<rootDir>/libs/static-text/src"
+      "@libs/static-text": "<rootDir>/libs/static-text/src",
+      "@libs/pug-engine/(.*)": "<rootDir>/libs/pug-engine/src/$1",
+      "@libs/pug-engine": "<rootDir>/libs/pug-engine/src",
+      "@libs/pug-templates/(.*)": "<rootDir>/libs/pug-templates/src/$1",
+      "@libs/pug-templates": "<rootDir>/libs/pug-templates/src"
     }
   }
 }

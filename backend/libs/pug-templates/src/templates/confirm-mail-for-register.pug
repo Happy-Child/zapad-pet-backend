@@ -1,0 +1,8 @@
+extends ../templates/common/index
+
+block content
+    .mail-template__register
+        h1 Hi #{name}!
+        h4
+            a(href=confirmUrl, target="_blank")
+                | Touch this and confirm your email.

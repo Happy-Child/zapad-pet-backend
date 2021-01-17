@@ -1,8 +1,8 @@
+import * as config from 'config';
 import { Injectable } from '@nestjs/common';
 import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
 import { TRANSPORTER_DATA } from '../types/transporter-data.types';
-import * as config from 'config';
 
 const transporterData: TRANSPORTER_DATA = {
   host: config.MAIL_SENDER.HOST,

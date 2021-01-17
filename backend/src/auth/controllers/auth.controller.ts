@@ -1,15 +1,15 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Query,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body, Query } from '@nestjs/common';
 import { AuthService } from '../services/auth.service';
-import { LoginBodyDto } from '../dtos/login.body.dto';
-import { ResetPasswordQueryDto } from '../dtos/reset-password.query.dto';
-import { RegistrationBodyDto } from '../dtos/registration.body.dto';
-import { LoginResponseDto } from '../dtos/login.response.dto';
+import { LoginBodyDto, LoginResponseDto } from '../dtos/login.dto';
+import {
+  ResetPasswordQueryDto,
+  FinishResetPasswordBodyDto,
+} from '../dtos/reset-password.dto';
+import { RegistrationBodyDto } from '../dtos/registration.dto';
+import {
+  ConfirmEmailQueryDto,
+  FinishConfirmEmailBodyDto,
+} from '../dtos/confirm-email.dto';
 
 @Controller('auth')
 export class AuthController {
@@ -27,8 +27,36 @@ export class AuthController {
     return this.authService.registration(RegistrationBodyDto);
   }
 
-  @Get('/reset_password')
-  async resetPassword(@Query() ResetPasswordQueryDto: ResetPasswordQueryDto) {
-    return this.authService.resetPassword(ResetPasswordQueryDto);
+  @Get('/confirm-email')
+  async sendMailByConfirmEmail(
+    @Query() ConfirmEmailQueryDto: ConfirmEmailQueryDto,
+  ) {
+    return this.authService.sendMailByConfirmEmail(ConfirmEmailQueryDto);
+  }
+
+  @Post('/finish-confirm-email')
+  async finishConfirmEmail(
+    @Body() FinishConfirmEmailBodyDto: FinishConfirmEmailBodyDto,
+  ) {
+    return this.authService.finishConfirmEmail(FinishConfirmEmailBodyDto);
+  }
+
+  @Get('/reset-password')
+  async sendEmailByResetPassword(
+    @Query() ResetPasswordQueryDto: ResetPasswordQueryDto,
+  ) {
+    return this.authService.sendEmailByResetPassword(ResetPasswordQueryDto);
+  }
+
+  @Post('/finish-reset-password')
+  async finishResetPassword(
+    @Body() FinishResetPasswordBodyDto: FinishResetPasswordBodyDto,
+  ) {
+    return this.authService.finishResetPassword(FinishResetPasswordBodyDto);
+  }
+
+  @Get('/ra')
+  async removeAllUsers() {
+    return this.authService.removeAllUsers();
   }
 }

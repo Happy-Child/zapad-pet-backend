@@ -14,6 +14,10 @@
     "@libs/filters/(.*)": "<rootDir>/../libs/filters/src/$1",
     "@libs/filters": "<rootDir>/../libs/filters/src",
     "@libs/static-text/(.*)": "<rootDir>/../libs/static-text/src/$1",
-    "@libs/static-text": "<rootDir>/../libs/static-text/src"
+    "@libs/static-text": "<rootDir>/../libs/static-text/src",
+    "@libs/pug-engine/(.*)": "<rootDir>/../libs/pug-engine/src/$1",
+    "@libs/pug-engine": "<rootDir>/../libs/pug-engine/src",
+    "@libs/pug-templates/(.*)": "<rootDir>/../libs/pug-templates/src/$1",
+    "@libs/pug-templates": "<rootDir>/../libs/pug-templates/src"
   }
 }

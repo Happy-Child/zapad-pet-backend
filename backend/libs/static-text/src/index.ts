@@ -1,2 +1,1 @@
-export * from './texts.module';
-export * from './texts.service';
+export * from './texts/mail.text';

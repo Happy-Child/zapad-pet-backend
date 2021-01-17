@@ -6,6 +6,7 @@ import { AuthController } from './controllers/auth.controller';
 import { AuthService } from './services/auth.service';
 import { User } from '@libs/entities';
 import { MailSenderModule } from '@libs/mail-sender';
+import { PugEngineModule } from '@libs/pug-engine';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { JWT_SECRET, JWT_SESSION_TIME } from '@libs/constants';
 
@@ -15,6 +16,7 @@ const entities = [User];
   imports: [
     TypeOrmModule.forFeature(entities),
     MailSenderModule,
+    PugEngineModule,
     PassportModule,
     JwtModule.register({
       signOptions: {

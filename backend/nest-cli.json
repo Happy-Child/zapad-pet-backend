@@ -31,6 +31,24 @@
       "compilerOptions": {
         "tsConfigPath": "libs/static-text/tsconfig.lib.json"
       }
+    },
+    "pug-engine": {
+      "type": "library",
+      "root": "libs/pug-engine",
+      "entryFile": "index",
+      "sourceRoot": "libs/pug-engine/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/pug-engine/tsconfig.lib.json"
+      }
+    },
+    "pug-templates": {
+      "type": "library",
+      "root": "libs/pug-templates",
+      "entryFile": "index",
+      "sourceRoot": "libs/pug-templates/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/pug-templates/tsconfig.lib.json"
+      }
     }
   }
 }
