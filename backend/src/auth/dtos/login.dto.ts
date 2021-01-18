@@ -4,7 +4,7 @@ import {
   MAX_PASSWORD_LENGTH,
   MIN_PASSWORD_LENGTH,
 } from '@libs/constants';
-import { Type } from 'class-transformer';
+import { plainToClass, Type } from 'class-transformer';
 import { User } from '@libs/entities';
 
 const commonErrorMessage = { message: ERRORS.INVALID_VALUE };
@@ -25,4 +25,8 @@ export class LoginResponseDto {
 
   @IsString(commonErrorMessage)
   token: string;
+
+  constructor(data: LoginResponseDto) {
+    Object.assign(this, data);
+  }
 }

@@ -82,10 +82,10 @@ export class AuthService {
     const payload = this.getUserPayload(user);
     const token = this.jwtService.sign(payload);
 
-    return {
+    return new LoginResponseDto({
       user,
       token,
-    };
+    });
   }
 
   public async registration(data: RegistrationBodyDto): Promise<boolean> {

@@ -40,28 +40,28 @@ export class AuthController {
   @Get('/confirm-email')
   async sendMailByConfirmEmail(
     @Query() ConfirmEmailQueryDto: ConfirmEmailQueryDto,
-  ) {
+  ): Promise<boolean> {
     return this.authService.sendMailByConfirmEmail(ConfirmEmailQueryDto);
   }
 
   @Post('/finish-confirm-email')
   async finishConfirmEmail(
     @Body() FinishConfirmEmailBodyDto: FinishConfirmEmailBodyDto,
-  ) {
+  ): Promise<boolean> {
     return this.authService.finishConfirmEmail(FinishConfirmEmailBodyDto);
   }
 
   @Get('/reset-password')
   async sendEmailByResetPassword(
     @Query() ResetPasswordQueryDto: ResetPasswordQueryDto,
-  ) {
+  ): Promise<boolean> {
     return this.authService.sendEmailByResetPassword(ResetPasswordQueryDto);
   }
 
   @Post('/finish-reset-password')
   async finishResetPassword(
     @Body() FinishResetPasswordBodyDto: FinishResetPasswordBodyDto,
-  ) {
+  ): Promise<boolean> {
     return this.authService.finishResetPassword(FinishResetPasswordBodyDto);
   }
 
