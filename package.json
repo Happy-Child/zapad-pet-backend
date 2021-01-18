@@ -24,7 +24,9 @@
     "h:push": "heroku container:login && heroku container:push web --app zapad-pet-backend",
     "docker:build-image": "docker build . -t zapad-pet-backend",
     "docker:remove-images": "docker rmi -f zapad-pet-backend registry.heroku.com/zapad-pet-backend/web",
-    "h:build": "yarn docker:remove-images && yarn docker:build-image && yarn h:push && yarn h:release"
+    "h:build": "yarn docker:remove-images && yarn docker:build-image && yarn h:push && yarn h:release",
+    "dc:up": "docker-compose -f docker-compose.dev.yml up -d",
+    "dc:down": "docker-compose -f docker-compose.dev.yml -v down"
   },
   "dependencies": {
     "@nestjs/common": "^7.5.1",
