@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  api:
+    build: .
+    depends_on:
+      - postgres
+    volumes:
+      - logs:/app/logs/
+
+volumes:
+  logs:

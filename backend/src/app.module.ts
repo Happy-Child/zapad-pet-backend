@@ -7,9 +7,11 @@ import { GlobalFiltersModule } from '@libs/filters/global-filters.module';
 import { GlobalPipesModule } from '@libs/pipes/global-pipes.module';
 import { User } from '@libs/entities';
 
+const devMode = config.NODE_ENV === 'development';
+
 const entities = [User];
 
-const synchronize = config.NODE_ENV === 'dev';
+const synchronize = devMode;
 
 @Module({
   imports: [
@@ -23,6 +25,9 @@ const synchronize = config.NODE_ENV === 'dev';
       retryAttempts: 5,
       retryDelay: 2000,
       migrationsRun: false,
+      ssl: {
+        rejectUnauthorized: false,
+      },
       entities,
       synchronize,
     }),

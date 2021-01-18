@@ -1,5 +1,4 @@
 /node_modules
 /dist
-local.json
-production.json
+config/local.json
 .env

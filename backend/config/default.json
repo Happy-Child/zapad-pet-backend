@@ -1,5 +1,5 @@
 {
-  "NODE_ENV": "dev",
+  "NODE_ENV": "development",
   "DB": {
     "POSTGRES_HOST": "localhost",
     "POSTGRES_PORT": 5432,

@@ -1,15 +1,6 @@
 version: '3.4'
 
 services:
-  api:
-    build: .
-    depends_on:
-      - postgres
-    volumes:
-      - logs:/app/logs/
-    ports:
-      - "127.0.0.1:27181:3001"
-
   postgres:
     image: postgres:latest
     env_file:
@@ -17,6 +8,3 @@ services:
     ports:
       - "27190:5432"
     restart: always
-
-volumes:
-  logs:

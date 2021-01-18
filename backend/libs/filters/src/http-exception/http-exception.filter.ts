@@ -25,6 +25,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
             ? ((exception as unknown) as IAbstractError).errors
             : [];
           res.status(status).json({ status, message, errors });
+          return;
         }
       }
 
